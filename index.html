@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.Inicio/secion/Unad.edu.com</title>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <center><img src="cabesa 1.png" width="100%"></center>
+    <center><img src="encabesado.png" width="30%"></center>
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Entrar</button>
+            <p id="error-message"></p>
+            <center></center><img src="pie.png" width="100%"></center>
+            
+            
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            if (username === '' || password === '') {
+                errorMessage.textContent = 'Rellena todos los campos';
+                return;
+            }
+
+            if (username === 'gustavo_a_u@hotmail.com' && password === '79796648') {
+                window.location.href = 'welcome.html';
+            } else {
+                errorMessage.textContent = 'Usuario o contraseña incorrectos';
+            }
+        });
+    </script>
+</body>
+</html>
